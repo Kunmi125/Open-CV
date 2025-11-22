@@ -26,21 +26,52 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
-# Draw rectangle
+# Draw rectangle - Empty rectangle
 
 import cv2
 
-image1 = cv2.imread("Lesson 5/sunflower.png") 
+image1 = cv2.imread("Lesson 5/pikahat.png") 
 
 # start and end coordinate
 
 start_coordinate = (20, 80)
 end_coordinate = (250, 650)
 color = (125, 125, 255)
-line_thickness = -4
+line_thickness = 4
 
 final_image = cv2.rectangle(image1, start_coordinate, end_coordinate, color, line_thickness)
 
 cv2.imshow("Gotham City", final_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+
+# Draw rectangle - Filled rectangle
+
+start_coordinate = (20, 500)
+end_coordinate = (250, 650)
+color = (255, 255, 255)
+line_thickness = -1
+
+final_image = cv2.rectangle(image1, start_coordinate, end_coordinate, color, line_thickness)
+
+cv2.imshow("Gotham City", final_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# text on the image
+
+import cv2
+
+image1 = cv2.imread("Lesson 5/pikahat.png") 
+
+font = cv2.FONT_HERSHEY_SIMPLEX
+origin = (100, 100)
+fontScale = 1
+thickness = 2
+color2 = (125, 255, 0)
+text = cv2.putText(image1, "Hello", origin, font, fontScale, color2, thickness, cv2.LINE_AA)
+cv2.imshow("plant", text)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
